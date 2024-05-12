@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+body{
+    background: #007bff;
+}
+.start_btn,
+.info_box,
+.quiz_box,
+.result{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.info_box.activateinfo,
+.quiz_box.activatequiz,
+.result.showres{
+    z-index:5;
+    opacity:1;
+    pointer-events:auto;
+    transform:translate(-50%,-50%) scale(1);
+}
+.start_btn button{
+    color:#007bff;
+    border:none;
+    border-radius:5px;
+    font-size:20px;
+    font-weight:500;
+    outline:none;
+    padding:15px 30px;
+    cursor: pointer;
+    background: #fff;
+}
+.info_box{
+    background:#fff;
+    width:500px;
+    border-radius:5px;
+    opacity:0;
+    pointer-events:none;
+    transform:translate(-50%,-50%) scale(0.9);
+}
+.info_box .info_title{
+    height:60px;
+    width:100%;
+    border-bottom: 1px solid lightgrey;
+    display:flex;
+    align-items: center;
+    padding: 0 35px;
+    font-size:20px;
+    font-weight:600;
+}
+.info_box .info_list{
+    padding:15px 35px;
+}
+.info_box .info_list .list_items{
+    margin: 5px 0;
+    font-size: 17px;
+}
+.info_box .info_list .list_items span{
+    color:#007bff;
+    font-weight:600;
+}
+.info_box .buttons{
+    height:60px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top:1px solid lightgrey;
+}
+.info_box .buttons button{
+    margin:0 5px;
+    height:40px;
+    width:100px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    font-size:16px;
+    font-weight:500;
+    cursor: pointer;
+    color: #fff;
+}
+.buttons button.quit{
+    color:#007bff;
+}
+.buttons button.continue{
+    color:white;
+    background-color: #007bff;
+}
+.buttons button.quit:hover{
+    color:white;
+    background:#007bff;
+}
+.buttons button.continue:hover{
+    color:white;
+    background:#0263ca;
+}
+
+.quiz_box{
+   
+    width:550px;
+    background:#fff;
+    border-radius:5px;
+    opacity:0;
+    pointer-events:none;
+    transform:translate(-50%,-50%) scale(0.9);
+}
+.quiz_box header{
+    position:relative;
+    z-index:99;
+    height:60px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: #fff;
+    padding: 0 35px;
+    box-shadow:0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+.quiz_box header .title{
+    font-size:20px;
+    font-weight:600;
+}
+.quiz_box header .timer_set{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background:#cce5ff;
+    height:45px;
+    border-radius: 5px;
+    border:1px solid #b8daff;
+    padding:0 5px;
+    width:145px;
+}
+.quiz_box header .timer_set .timer_text{
+    font-size:17px;
+    font-weight:600;
+    user-select: none;
+}
+.quiz_box header .timer_set .timer_sec{
+    background: #343a40;
+    color:#fff;
+    user-select: none;
+    font-size:17px;
+    font-weight:600;
+    height:30px;
+    width:45px;
+    text-align:center;
+    border:1px solid #343a40;
+    border-radius:5px;
+    line-height: 30px;
+    margin:0 10px;
+}
+.quiz_box header .time_line{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+section{
+    padding:25px;
+    display:block;
+}
+section .ques{
+    font-size:18px;
+    font-weight:600;
+}
+section .options_list{
+    padding:20px 0px;
+    display:block;
+}
+section .options_list .option{
+    font-size:16px;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    border-radius:5px;
+    border:1px solid #84c5fe;
+    background:aliceblue;
+    padding:10px;
+    margin-bottom:20px;
+    cursor: pointer;
+}
+.options_list .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+.options_list .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+.options_list .option.disabled{
+    pointer-events: none;
+}
+
+section .options_list .option:last-child{
+    margin-bottom:0px;
+}
+section .options_list .option:hover{
+    color:#004085;
+    background:#cce5ff;
+    border-color:#b8daff;
+}
+.options_list .option .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+.options_list .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+footer{
+    height:60px;
+    width:100%;
+    padding: 0 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+footer .end span{
+    display:flex;
+    user-select:none;
+}
+footer .end span p{
+    padding:0 5px;
+    font-weight:600;
+}
+footer .end span p:first-child{
+    padding-left:0px;
+}
+footer .next_ques{
+    display:none;
+    font-size:18px;
+    font-weight:300;
+    height:30px;
+    padding:0 13px;
+    border:none;
+    outline:none;
+    border-radius:5px;
+    background: #007bff;
+    color:white;
+    border:1px solid #007bff;
+    cursor:pointer;
+}
+footer .next_ques:hover{
+    background:#0263ca;
+}
+.result{
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.result .complete{
+    font-size:20px;
+    font-weight:550;
+}
+.result .score_text span{
+    font-size:18px;
+    font-weight:550;
+    display:flex;
+    margin: 10px 0;
+}
+.score_text span p{
+    font-weight:700;
+    padding: 0 5px;
+}
+.result .buttn{
+    display:flex;
+    margin:20px 0;
+}
+.result .buttn button{
+    padding: 5px 5px;
+    margin:0 5px;
+    outline:none;
+    border:none;
+    border:1px solid #007bff;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:550;
+    height:45px;
+    color:white;
+}
+.buttn button.restart{
+    color:white;
+    background:#007bff;
+}
+.buttn button.quit{
+    color:#007bff;
+}
+.buttn button.quit:hover{
+    color:white;
+    background: #007bff;
+}
+.buttn button.restart:hover{
+    background:#0263ca;
+    color:white;
+}

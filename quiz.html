@@ -1,0 +1,72 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Awesome Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="start_btn"><button>Start Quiz</button></div>
+    <div class="info_box">
+        <div class="info_title">Some rules of this quiz</div>
+        <div class="info_list">
+            <div class="list_items">1. You will have only <span>15 seconds </span>for each question.</div>
+            <div class="list_items">2. Once you select your answer, you can't reselect.</div>
+            <div class="list_items">3. You can't select any option once time goes off. </div>
+            <div class="list_items">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="list_items">5. You'll get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="continue">Continue</button>
+        </div>
+    </div>
+    <div class="quiz_box">
+        <header>
+            <div class="title">Awesome Quiz Application</div>
+            <div class="timer_set">
+                <div class="timer_text">Time left </div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+                <div class="ques">
+                    
+                </div>
+                <div class="options_list">
+                    <div class="option">
+                        <div class="iconcross"><i class="fas fa-times"></i></div>
+                    </div>
+                    <div class="option">
+                        <div class="icontick"><i class="fas fa-check"></i></div>
+
+
+                    </div>
+                </div>
+        </section>
+        <footer>
+            <div class="end">
+                
+            </div>
+            <button class="next_ques">Next Que</button>
+        </footer>   
+    </div>
+    <div class="result">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete">You've completed the quiz!</div>
+        <div class="score_text">
+            
+        </div>
+        <div class="buttn">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Exit Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="questions.js"></script>
+</body>
+</html>
